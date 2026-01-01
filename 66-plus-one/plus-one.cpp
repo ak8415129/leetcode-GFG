@@ -15,16 +15,7 @@ public:
             }
             else
             carry=0;
-
-
-        //     if(sum==10)
-        //     { 
-        //      carry=1; 
-        //      sum=sum%10; 
-        //       ans.push_back(sum);
-        //      ans.push_back(1);
-        //     } 
-        //     else
+            
             ans.push_back(sum);
          } 
        
