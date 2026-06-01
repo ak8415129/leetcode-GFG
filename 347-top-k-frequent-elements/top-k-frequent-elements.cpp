@@ -1,4 +1,12 @@
 class Solution {
+    struct Cmp {
+    bool operator()(pair<int, int>& a, pair<int, int>& b) {
+        if(a.first!=b.first)
+        return a.first > b.first;
+
+        return a.second > b.second; 
+    }
+};
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
         // padho with pratyush
@@ -10,7 +18,7 @@ public:
         } 
        
        // for cmp i use inbuild greater<pair<int,int>>>
-        priority_queue<pair<int,int>,vector<pair<int,int>> ,greater<pair<int,int>>> pq;
+        priority_queue<pair<int,int>,vector<pair<int,int>> ,Cmp> pq;
          for(auto it:mp)
         { 
             int element=it.first;
