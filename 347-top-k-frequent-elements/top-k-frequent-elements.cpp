@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
+        // padho with pratyush
        int n=nums.size();
         unordered_map<int,int> mp;
         for(int i=0; i<n; i++)
@@ -8,7 +9,7 @@ public:
             mp[nums[i]]++;
         } 
        
-       
+       // for cmp i use inbuild greater<pair<int,int>>>
         priority_queue<pair<int,int>,vector<pair<int,int>> ,greater<pair<int,int>>> pq;
          for(auto it:mp)
         { 
