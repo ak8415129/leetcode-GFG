@@ -14,28 +14,38 @@ public:
       if(head == NULL || head->next == NULL)
             return NULL;
 
-        int count = 0;
-        ListNode* temp = head;
+        // int count = 0;
+        // ListNode* temp = head;
 
-        while(temp != NULL)
-        {
-            count++;
-            temp = temp->next;
-        }
+        // while(temp != NULL)
+        // {
+        //     count++;
+        //     temp = temp->next;
+        // }
 
-        int mid = count / 2;
+        // int mid = count / 2;
 
-        ListNode* curr = head;
+        // ListNode* curr = head;
+        // ListNode* prev = NULL;
+
+        // for(int i = 0; i < mid; i++)
+        // {
+        //     prev = curr;
+        //     curr = curr->next;
+        // }
+
+        // prev->next = curr->next;
+         
+        ListNode* slow = head;
+        ListNode* fast=head;
         ListNode* prev = NULL;
-
-        for(int i = 0; i < mid; i++)
+        while(fast!=NULL &&fast->next!=NULL)
         {
-            prev = curr;
-            curr = curr->next;
+            prev=slow;
+            slow=slow->next;
+            fast=fast->next->next;
         }
-
-        prev->next = curr->next;
-
+        prev->next=slow->next;
         return head;
         
     }
