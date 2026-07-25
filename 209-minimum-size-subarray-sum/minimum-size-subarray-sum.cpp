@@ -9,10 +9,7 @@ public:
         { 
              sum+=nums[high];
 
-            if(sum==target)
-           {
-              ans=min(ans,(high-low)+1);
-           }
+           
           
             while(sum>=target)
             {   
@@ -21,6 +18,10 @@ public:
                 low++;  
 
             }
+             if(sum==target)
+           {
+              ans=min(ans,(high-low)+1);
+           }
           
             high++;
 
@@ -28,7 +29,7 @@ public:
         }  
         if(ans==INT_MAX)
         return 0;
-        
+
         return ans;    
     }
 };
